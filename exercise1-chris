@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+# $1 means "the first argument passed to this script"
+# cut -d " " means cut out the delimiter, which is a space
+#  -f 1 means only use field (column) 1
+# sort | uniq means sort them to only show the unique permissions
+# wc -l counts the words, or the number of different permissions
+
+
+ls -l "$1" | cut -d ' ' -f 1 | sort | uniq | wc -l
